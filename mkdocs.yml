@@ -1,0 +1,23 @@
+site_name: 'Betterprotect'
+site_description: "Documentation for Betterprotect"
+site_author: 'Alexander Hank'
+copyright: 'Copyright © 2020 Alexander Hank'
+
+nav:
+  - 'About Betterprotect': index.md
+  - 'Installation': installation.md
+  - 'Postfix': setup_postfix.md
+
+markdown_extensions:
+  - admonition
+
+plugins:
+  - search
+  - markdownextradata:
+      data: '.'
+
+theme:
+  name: 'material'
+  language: de
+  font: false
+  logo: 'img/logo.png'
