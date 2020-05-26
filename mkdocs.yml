@@ -19,6 +19,6 @@ plugins:
 
 theme:
   name: 'material'
-  language: de
+  language: en
   font: false
   logo: 'img/logo.png'
