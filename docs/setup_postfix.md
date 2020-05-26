@@ -82,9 +82,9 @@ chown -R betterprotect:betterprotect /opt/betterprotect-policy-service
     If the current version does not include a policy service release, you can use the version from the previous release.
     
 ## Configure Postfix
-This describes the basic postfix setup needed for Betterprotect.
+This describes the basic Postfix setup needed for Betterprotect.
 This is not a complete configuration, but rather a starting point.
-Configure your postfix server to your needs and then insert the marked lines.
+Configure your Postfix server to your needs and then insert the marked lines.
 If you are unsure, you can open an issue: https://github.com/Hank-IT/Betterprotect/issues
 
 ### main.cf
@@ -189,11 +189,11 @@ smtpd_data_restrictions =       reject_multi_recipient_bounce,
 ````
 
 !!! warning
-    The options ``smtpd_milter_maps``, ``relay_domains``, ``relay_recipient_maps``, ``transport_maps`` need to be set like this, so postfix queries the database for these values.
+    The options ``smtpd_milter_maps``, ``relay_domains``, ``relay_recipient_maps``, ``transport_maps`` need to be set like this, so Postfix queries the database for these values.
     The ``check_policy_service`` under ``smtpd_recipient_restrictions`` is required for the Betterprotect Policy Service we installed earlier.
     
 ### master.cf
-We need to instruct Postfix to invoke the Betterprotect Policy Service. We achieve that by created a new entry in Postfixs ``/etc/postfix/master.cf`` config.
+We need to instruct Postfix to invoke the Betterprotect Policy Service. We achieve that by created a new entry in Postfix's ``/etc/postfix/master.cf`` config.
 
 ````
 betterprotect-policy-server unix -        n       n       -       0       spawn
